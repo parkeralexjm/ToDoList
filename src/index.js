@@ -5,7 +5,7 @@ import getLocalStorage from './getLocalStorage.js';
 import displayAllTasks from './displayAllTasks.js';
 
 
-//newTask("TestTitle", "TestDesc", "TestDueDate", "highPriority", "TestNote");
+//newTask("TestTitle", "TestDesc", "TestDueDate", "lowPriority", "task");
 
 displayAllTasks(getLocalStorage())
 

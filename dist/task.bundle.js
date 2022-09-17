@@ -16,7 +16,7 @@
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newTask)\n/* harmony export */ });\nfunction newTask(title, description, dueDate, priority, note) {\n    const tempTask = new task(title, description, dueDate, priority, note)\n    localStorage.setItem((localStorage.length +1) , JSON.stringify(tempTask))\n}\n\nfunction task(title, description, dueDate, priority, note) {\n    this.title = title\n    this.description = description\n    this.dueDate = dueDate\n    this.priority = priority\n    this.note = note\n}\n\n//# sourceURL=webpack://todolist/./src/task.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ newTask)\n/* harmony export */ });\nfunction newTask(title, description, dueDate, priority, type) {\n    const tempTask = new task(title, description, dueDate, priority, type)\n    localStorage.setItem((localStorage.length +1) , JSON.stringify(tempTask))\n}\n\nfunction task(title, description, dueDate, priority, type) {\n    this.title = title\n    this.description = description\n    this.dueDate = dueDate\n    this.priority = priority\n    this.type = type\n}\n\n//# sourceURL=webpack://todolist/./src/task.js?");
 
 /***/ })
 
