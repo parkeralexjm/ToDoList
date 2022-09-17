@@ -84,7 +84,7 @@ body > div.mainContainer > div.sideNav > h3 {
     padding: 0 20px;
 }
 
-i {
+li > i, h4 > i {
     width: 20px;
     height: 20px;
     position: relative;
@@ -113,16 +113,19 @@ i {
 
 .taskContainer {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin: 15px 30px;
-    padding-left: 15px;
+    padding: 0 15px;
     background-color: var(--main-color-lighter);
     border: 0 solid white;
+    font-size: 0.9rem;
 }
 
-.taskContainer > p:nth-child(3) {
-    align-items: flex-end;
+.taskLeftContainer, .taskRightContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .highPriority, .midPriority, .lowPriority {
@@ -139,4 +142,13 @@ i {
 
 .lowPriority {
     border-left-color: green;
+}
+
+.taskLeftContainer > p, .taskRightContainer > p, .taskRightContainer > i {
+    padding-left: 10px;
+    margin: 0;
+}
+
+.taskTitle {
+    margin: 8px;
 }

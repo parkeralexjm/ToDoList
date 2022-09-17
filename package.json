@@ -1,0 +1,36 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "A web app that can be used to track to-do tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkeralexjm/ToDoList.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "author": "AParker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parkeralexjm/ToDoList/issues"
+  },
+  "homepage": "https://github.com/parkeralexjm/ToDoList#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
