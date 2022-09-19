@@ -8,7 +8,10 @@ module.exports = {
     task: './src/task.js',
     storage: './src/storage.js',
     getLocalStorage: './src/getLocalStorage.js',
-    displayAllTasks: './src/displayAllTasks.js'  
+    displayAllTasks: './src/displayAllTasks.js',
+    displayProjects: '/src/displayProjects.js',
+    addProject: '/src/addProject.js'
+
     },
   output: {
     filename: '[name].bundle.js',

@@ -119,6 +119,7 @@ li > i, h4 > i {
     padding: 0 15px;
     background-color: var(--main-color-lighter);
     border: 0 solid white;
+    border-radius: 5px;
     font-size: 0.9rem;
 }
 
@@ -151,4 +152,33 @@ li > i, h4 > i {
 
 .taskTitle {
     margin: 8px;
+}
+
+.taskRightContainer > i:hover {
+    filter: invert(12%) sepia(82%) saturate(4946%) hue-rotate(6deg) brightness(74%) contrast(119%);
+}
+
+.blurBackground {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(5px);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newProjectContainer {
+    position: absolute;
+    background-color: var(--main-color-light);
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--generic-shadow);
+    width: 400px;
+    height: 300px;
+    display: flex;
+    padding: 10px;
+}
+
+textarea, input {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
