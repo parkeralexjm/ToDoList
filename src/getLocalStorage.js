@@ -1,8 +1,8 @@
 export default function getLocalStorage() {
-    const taskList = []
+    const storageList = []
     for (let i = 1; i <= localStorage.length; i++) {
         const tempTask = JSON.parse(localStorage.getItem(i))
-        taskList.push(tempTask);
+        storageList.push(tempTask);
     }
-    return taskList;
+    return storageList;
 }1

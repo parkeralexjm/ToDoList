@@ -1,5 +1,6 @@
 import newProject from './project.js';
 import { refresh } from './index.js';
+import getLocalStorage from './getLocalStorage.js';
 
 export default function addProject() {
     // Create a div that will blur the background and apply it to obscure the page
@@ -77,6 +78,7 @@ function clearForm() {
 }
 
 function createProject() {
+    // // Check which radio is selected
     // let radios = document.getElementsByName('priority')
     // let priority = ''
     // for (let i = 0; i < radios.length; i++) {
@@ -89,7 +91,21 @@ function createProject() {
     //     }
     // }
 
-    newProject(document.getElementById('newProjectTitle').value)
+    // Project title validation
+    const title = document.getElementById('newProjectTitle').value
+    // Get current project titles
+    let objectArray = getLocalStorage()
+    let titleList = objectArray.map(a => a.title)
+
+    if (title == "") {
+        alert("Project must have a name");
+        return false;
+    } else if (titleList.includes(title)) {
+        alert("A project with this name already exists")
+        return false;
+    }
+
+    newProject(title)
     clearForm()
     refresh()
 }
