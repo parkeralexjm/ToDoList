@@ -1,5 +1,21 @@
-export default function displayAllTasks(taskList) {
+export function displayProjects(taskList) {
+    const projectList = document.getElementsByClassName('projectList')
+    // Clear the current projectList
+    projectList[0].innerHTML = ''
+    for (let i = 0; i < taskList.length; i++) {
+        if (taskList[i].type == "project") {
+            //Add the projects to the project list DOM
+            const projectTitle = document.createElement('li')
+            projectTitle.classList.add("projectTitle")
+            projectTitle.innerHTML = `<i class="fa-solid fa-diagram-project"></i>${taskList[i].title}`
+            projectList[0].append(projectTitle)
+        }
+    }
+}   
+
+export function displayTasks(taskList) {
     const content = document.getElementsByClassName("content")
+    content[0].innerHTML = ''
     for (let i = 0; i < taskList.length; i++) {
         if (taskList[i].type == "task") {
             const taskLeftContainer = document.createElement('div')
@@ -13,7 +29,6 @@ export default function displayAllTasks(taskList) {
             const taskContainer = document.createElement('div')
             taskContainer.classList.add('taskContainer',`${taskList[i].priority}`)
 
-            //taskPriority.classList.add(`${taskList[i].priority}`)
             const taskTitle = document.createElement('h3')
             taskTitle.textContent = taskList[i].title
             taskTitle.classList.add('taskTitle')
@@ -35,4 +50,8 @@ export default function displayAllTasks(taskList) {
             content[0].append(taskContainer)
         }
     }
+}
+
+export function displayProjectTasks(project) {
+
 }

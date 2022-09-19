@@ -1,4 +1,3 @@
-import newProject from './project.js';
 import { refresh } from './index.js';
 import getLocalStorage from './getLocalStorage.js';
 
@@ -92,9 +91,9 @@ function createProject() {
     // }
 
     // Project title validation
-    const title = document.getElementById('newProjectTitle').value
+    let title = document.getElementById('newProjectTitle').value
     // Get current project titles
-    let objectArray = getLocalStorage()
+    let objectArray = getLocalStorage('project')
     let titleList = objectArray.map(a => a.title)
 
     if (title == "") {
@@ -108,4 +107,14 @@ function createProject() {
     newProject(title)
     clearForm()
     refresh()
+}
+
+export function newProject(title) {
+    const tempProject = new project(title)
+    localStorage.setItem((localStorage.length + 1), JSON.stringify(tempProject))
+}
+
+function project(title) {
+    this.title = title
+    this.type = 'project'
 }

@@ -1,21 +1,18 @@
 import './style.css';
 import newTask from './task.js';
-import storageAvailable from './storage';
 import getLocalStorage from './getLocalStorage.js';
-import displayAllTasks from './displayAllTasks.js';
-import displayProjects from './displayProjects.js';
+import {displayProjects, displayTasks} from './display.js';
 import addProject from './addProject'
-import newProject from './project';
 
 // bind the event handler to the add project button
 const addProjectButton = document.getElementsByClassName("addProject")
 addProjectButton[0].addEventListener('click', addProject)
 
-//newTask("TestTitle", "TestDesc", "TestDueDate", "lowPriority", "project");
+//newTask("TestTitle", "TestDesc", "TestDueDate", "lowPriority", "project 1", "task");
+// Function updates the project list and task list
 export function refresh() {
-    displayAllTasks(getLocalStorage());
-    displayProjects(getLocalStorage());
+    displayTasks(getLocalStorage("task"));
+    displayProjects(getLocalStorage("project"));
 }
 
 refresh()
-// storageAvailable('localStorage')
