@@ -5,6 +5,7 @@ import getLocalStorage from './getLocalStorage.js';
 import displayAllTasks from './displayAllTasks.js';
 import displayProjects from './displayProjects.js';
 import addProject from './addProject'
+import newProject from './project';
 
 // bind the event handler to the add project button
 const addProjectButton = document.getElementsByClassName("addProject")

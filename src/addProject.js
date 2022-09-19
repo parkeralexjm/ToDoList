@@ -1,4 +1,4 @@
-import newTask from './task.js';
+import newProject from './project.js';
 import { refresh } from './index.js';
 
 export default function addProject() {
@@ -22,34 +22,34 @@ export default function addProject() {
     newProjectTitle.type = 'text'
     newProjectTitle.placeholder = 'Project name'
     newProjectTitle.id = 'newProjectTitle'
-    // Create a description input
-    const newProjectDesc = document.createElement('textarea')
-    newProjectDesc.rows = '4'
-    newProjectDesc.cols = '40'
-    newProjectDesc.placeholder = "Enter description here..."
-    newProjectDesc.id = 'newProjectDesc'
-    // Create a due date input
-    const newProjectDueDate = document.createElement('input')
-    newProjectDueDate.type = 'date'
-    newProjectDueDate.id = 'newProjectDueDate'
+        // Create a description input
+    // const newProjectDesc = document.createElement('textarea')
+    // newProjectDesc.rows = '4'
+    // newProjectDesc.cols = '40'
+    // newProjectDesc.placeholder = "Enter description here..."
+    // newProjectDesc.id = 'newProjectDesc'
+        // Create a due date input
+    // const newProjectDueDate = document.createElement('input')
+    // newProjectDueDate.type = 'date'
+    // newProjectDueDate.id = 'newProjectDueDate'
         // Create a low priority input
-    const newProjectLowPriority = document.createElement('input')
-    newProjectLowPriority.type = 'radio'
-    newProjectLowPriority.name = 'priority'
-    newProjectLowPriority.value = 'low'
-    newProjectLowPriority.id = 'low'
-    // Create a mid priority input
-    const newProjectMidPriority = document.createElement('input')
-    newProjectMidPriority.type = 'radio'
-    newProjectMidPriority.name = 'priority'
-    newProjectMidPriority.value = 'mid'
-    newProjectMidPriority.id = 'mid'
-    // Create a high priority input
-    const newProjectHighPriority = document.createElement('input')
-    newProjectHighPriority.type = 'radio'
-    newProjectHighPriority.name = 'priority'
-    newProjectHighPriority.value = 'high'
-    newProjectHighPriority.id = 'high'
+    // const newProjectLowPriority = document.createElement('input')
+    // newProjectLowPriority.type = 'radio'
+    // newProjectLowPriority.name = 'priority'
+    // newProjectLowPriority.value = 'low'
+    // newProjectLowPriority.id = 'low'
+    // // Create a mid priority input
+    // const newProjectMidPriority = document.createElement('input')
+    // newProjectMidPriority.type = 'radio'
+    // newProjectMidPriority.name = 'priority'
+    // newProjectMidPriority.value = 'mid'
+    // newProjectMidPriority.id = 'mid'
+    // // Create a high priority input
+    // const newProjectHighPriority = document.createElement('input')
+    // newProjectHighPriority.type = 'radio'
+    // newProjectHighPriority.name = 'priority'
+    // newProjectHighPriority.value = 'high'
+    // newProjectHighPriority.id = 'high'
 
     const newProjectSubmit = document.createElement('button')
     newProjectSubmit.type = 'submit'
@@ -63,11 +63,6 @@ export default function addProject() {
 
     newProjectForm.append(newProjectHeading, 
                           newProjectTitle,
-                          newProjectDesc,
-                          newProjectDueDate,
-                          newProjectLowPriority,
-                          newProjectMidPriority,
-                          newProjectHighPriority,
                           newProjectSubmit,
                           newProjectCancel
                           )
@@ -82,24 +77,19 @@ function clearForm() {
 }
 
 function createProject() {
-    let radios = document.getElementsByName('priority')
-    let priority = ''
-    for (let i = 0; i < radios.length; i++) {
-        if (radios[i].value == 'low') {
-            priority = 'low'
-        } else if (radios[i].value == 'mid') {
-            priority = 'mid'
-        } else {
-            priority = 'high'
-        }
-    }
+    // let radios = document.getElementsByName('priority')
+    // let priority = ''
+    // for (let i = 0; i < radios.length; i++) {
+    //     if (radios[i].value == 'low') {
+    //         priority = 'low'
+    //     } else if (radios[i].value == 'mid') {
+    //         priority = 'mid'
+    //     } else {
+    //         priority = 'high'
+    //     }
+    // }
 
-    newTask(document.getElementById('newProjectTitle').value, 
-            document.getElementById('newProjectDesc').value,
-            document.getElementById('newProjectDueDate').value,
-            priority, 
-            'project')
-    
+    newProject(document.getElementById('newProjectTitle').value)
     clearForm()
     refresh()
 }
